@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Agregar Empleado
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/header.html' %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">
+            Detalle empleado: {{empleado.get_job_display}}            
+        </h1>
+        <div class="cell">            
+            {% if empleado.avatar %}
+                <img src="{{empleado.avatar.url}}">
+            {% else %}
+                <img src="{% static 'img/img1.jpg' %}">
+            {% endif %}                
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
